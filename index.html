@@ -1,1 +1,72 @@
-Hello World
+	<!DOCTYPE html>
+	<html ng-app="ui.bootstrap.demo">
+	<head>
+		<meta charset="utf-8">
+		<title>Popover 508</title>
+		<link rel="stylesheet" href="/styles.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+	    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+	    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+	    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.2.0.js"></script>
+		<script src="/example.js"></script>
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<script>
+			$(document).ready(function(){
+				$(".popover-jquery").hide();
+
+				$(".popover-jquery-a").click(function(){
+					$(".popover-jquery").toggle();
+
+					if($(".popover-jquery").is(":visible")) {
+						$(".popover-jquery").focus();						
+					}
+				});
+
+				$(".popover-angular-a").click(function(){
+					setTimeout(function(){
+						if($(".popover-angular").is(":visible")) {
+							$(".popover-angular").focus();						
+						}
+					}, 10);
+				});
+			});
+		</script>
+	</head>
+	</style>
+	<body>
+		<h1>Popover with 508 Compliance</h1>
+		<div>
+			<h3>With Jquery</h3>
+			<p>This is <a href="#" class="popover-jquery-a">Jquery Popover</a>.</p>
+		
+			<div tabindex="1" class="popover-jquery">
+				<h5 style="float:left;">Title</h5>
+				<!-- <div style="float:right;">X</div> -->
+				<br/><br/>
+				<p>This is content.</p>
+				<a href="http://www.google.com">Learn more</a>
+			</div>
+		</div>
+		
+		<div ng-controller="PopoverDemoCtrl">
+			<h3>With Bootstrap</h3>
+
+			<p>The is <a class="popover-angular-a" href="#" uib-popover-template="dynamicPopover.templateUrl" type="button" popover-placement="bottom" popover-trigger="'outsideClick'">Bootstrap Popover</a>
+			</p>
+
+		    <script type="text/ng-template" id="myPopoverTemplate.html">
+		        <div tabindex="1" class="popover-angular">
+					<h5 style="float:left;">Title</h5>
+					<!-- <div style="float:right;">X</div> -->
+					<br/><br/>
+					<div><p>This is content.</p></div>
+					<a href="http://www.google.com">Learn more</a>
+				</div>
+		    </script>
+		</div>
+	</body>
+	<footer>
+		This is the footer
+	</footer>
+</html>
