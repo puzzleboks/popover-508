@@ -14,48 +14,30 @@
 		<script src="example.js"></script>
 		<link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 		<script>
-			function togglePopover1() {
-				$(".popover-jquery1").toggle();
+			function togglePopover(id) {
+				$(".popover-jquery-"+id).toggle();
 
-				var vis = $(".popover-jquery1").is(":visible");
+				var vis = $(".popover-jquery-"+id).is(":visible");
 				
 				if (vis) {
 					setTimeout(function() {
-						$("#popover-header1").focus(),
-						10
-					});
-				}
-			}
-
-			function togglePopover2() {
-				$(".popover-jquery2").toggle();
-
-				var vis = $(".popover-jquery2").is(":visible");
-				
-				if (vis) {
-					setTimeout(function() {
-						$("#popover-header2").focus(),
+						$("#popover-header-"+id).focus(),
 						10
 					});
 				}
 			}
 
 			$(document).ready(function(){
-				$(".popover-jquery1").hide();
-				$(".popover-jquery2").hide();
+				$(".popover-jquery-0").hide();
+				$(".popover-jquery-1").hide();
 
-				$(".popover-jquery-a1").click(togglePopover1);
-				$(".popover-jquery-a2").click(togglePopover2);
+				$(".popover-jquery-a-0").click(function() { togglePopover(0) });
+				$(".popover-jquery-a-1").click(function() { togglePopover(1) });
 			});
 
-			function closePopover1() {
-				togglePopover1();
-				$(".popover-jquery-a1").focus();
-			}
-
-			function closePopover2() {
-				togglePopover2();
-				$(".popover-jquery-a2").focus();
+			function closePopover(id) {
+				$(".popover-jquery-"+id).hide();
+				$(".popover-jquery-a-"+id).focus();
 			}
 		</script>
 	</head>
@@ -64,23 +46,23 @@
 		<h1>Jquery Popover with 508 Compliance</h1>
 		<br/>
 		<div>
-			<p>This is <a href="javascript:void(0);" class="popover-jquery-a1">Jquery Popover with aria-labelledby</a>.</p>
-			<div id="popover" class="popover-container1 popover-jquery1" role="dialog" aria-labelledby="popover-header1">
-				<p tabindex="-1" id="popover-header1">Popover Header</p>
+			<p>This is <a href="javascript:void(0);" class="popover-jquery-a-0">Jquery Popover with aria-labelledby</a>.</p>
+			<div class="popover-container-0 popover-jquery-0" role="dialog" aria-labelledby="popover-header-0">
+				<p tabindex="-0" id="popover-header-0">Popover Header</p>
 				<p>This is content in the popover</p>
 				<a href="http://www.google.com">Learn more</a><br/>
-				<a id="popover-close" href="javascript:closePopover1();">Close Popover</a>
+				<a class="popover-0-close" href="javascript:closePopover(0);">Close Popover</a>
 			</div>
 			<p>This is content after the popover 1</p>
 		</div>
 		<br/>
 		<div>
-			<p>This is <a href="javascript:void(0);" class="popover-jquery-a2">Jquery Popover  without aria-labelledby</a>.</p>
-			<div class="popover-container2 popover-jquery2" role="dialog">
-				<p tabindex="-1" id="popover-header2">Popover Header</p>
+			<p>This is <a href="javascript:void(0);" class="popover-jquery-a-1">Jquery Popover  without aria-labelledby</a>.</p>
+			<div class="popover-container-1 popover-jquery-1" role="dialog">
+				<p tabindex="-0" id="popover-header-1">Popover Header</p>
 				<p>This is content in the popover</p>
 				<a href="http://www.google.com">Learn more</a><br/>
-				<a id="popover-close" href="javascript:closePopover2();">Close Popover</a>
+				<a class="popover-1-close" href="javascript:closePopover(1);">Close Popover</a>
 			</div>
 			<p>This is content after the popover 2</p>
 		</div>		
