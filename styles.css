@@ -1,4 +1,4 @@
-.popover-container {
+.popover-container1 {
   box-shadow: none;
   border-radius: 0;
   padding: 5px;
@@ -9,8 +9,23 @@
   font-size: 1em;
   width: 350px;
   position: absolute;
-  top: 100px;
-  left: 200px;
+  top: 120px;
+  left: 250px;
+}
+
+.popover-container2 {
+  box-shadow: none;
+  border-radius: 0;
+  padding: 5px;
+  border: 0;
+  background: #234E76;
+  color: #FFFFFF;
+  max-width: none;
+  font-size: 1em;
+  width: 350px;
+  position: absolute;
+  top: 200;
+  left: 250px;
 }
 
 body {
