@@ -1,31 +1,35 @@
 .popover-container-0 {
   box-shadow: none;
-  border-radius: 0;
-  padding: 5px;
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
   border: 0;
   background: #234E76;
   color: #FFFFFF;
-  max-width: none;
-  font-size: 1em;
   width: 350px;
   position: absolute;
-  top: 120px;
-  left: 250px;
+  top: 100px;
+  left: 200px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.popover-container-1 {
-  box-shadow: none;
-  border-radius: 0;
-  padding: 5px;
-  border: 0;
-  background: #234E76;
-  color: #FFFFFF;
-  max-width: none;
-  font-size: 1em;
-  width: 350px;
-  position: absolute;
-  top: 200;
-  left: 250px;
+.popover-close {
+  flex: 0;
+  flex-basis: 20px;
+}
+
+.popover-content {
+  flex: 1;
+}
+
+.learn-more {
+  color: white;
+}
+
+.close-button {
+  width: 30px;
+  height: 30px;  
 }
 
 body {
