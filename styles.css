@@ -14,10 +14,34 @@
   justify-content: space-between;
 }
 
-.popover-close {
+.popover-container-1 {
+  box-shadow: none;
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 0;
+  background: #234E76;
+  color: #FFFFFF;
+  width: 350px;
+  position: absolute;
+  top: 100px;
+  left: 200px;
+}
+
+.popover-0-close {
   flex: 0;
   flex-basis: 20px;
   margin-top: 5px;
+  background: none;
+  border: none;
+}
+
+.popover-1-close {
+  color: white;
+  background:none;
+  border:none;
+  float: right;
+  margin-bottom: 10px;
 }
 
 .popover-content {

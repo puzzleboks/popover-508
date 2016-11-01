@@ -23,6 +23,10 @@
 			$(document).ready(function(){
 				$(".popover-jquery-0").hide();
 				$(".popover-jquery-a-0").click(function() { togglePopover(0) });
+
+				$(".popover-jquery-1").hide();
+				$(".popover-jquery-a-1").click(function() { togglePopover(1) });
+
 			});
 
 			function closePopover(id) {
@@ -35,18 +39,27 @@
 	<body>
 		<h1>Jquery Popover with 508 Compliance</h1>
 		<div>
-			<p>This is the <a href="javascript:void(0);" class="popover-jquery-a-0">Jquery Popover</a>.</p>
+			<p>This is the <a href="javascript:void(0);" class="popover-jquery-a-0">Jquery Popover</a> with close button on the top right corner.</p>
 			<div class="popover-container-0 popover-jquery-0"  aria-labelledby="popover-header-0">
 				<div class="popover-content">
 					<p tabindex="0" id="popover-header-0">Popover Header</p>
 					<p>This is content in the popover</p>
 					<p><a class="learn-more" href="http://www.google.com">Learn More</a></p>
 				</div>
-				<div class="popover-close">
-					<a class="popover-0-close" href="javascript:closePopover(0);"><img class="close-button" src="close-button.png"/></a>
+				<div class="popover-0-close">
+					<button aria-label="dismiss popover" class="popover-0-close" onclick="javascript:closePopover(0);"><img class="close-button" src="close-button.png"/></button>
 				</div>
 			</div>
-			<p>This is content after the popover</p>
+		</div>
+
+		<div>
+			<p>This is the <a href="javascript:void(1);" class="popover-jquery-a-1">Jquery Popover</a> with close button on the bottom.</p>
+			<div class="popover-container-1 popover-jquery-1"  aria-labelledby="popover-header-1">
+				<p tabindex="0" id="popover-header-1">Popover Header</p>
+				<p>This is content in the popover</p>
+				<p><a class="learn-more" href="http://www.google.com">Learn More</a></p>
+				<p><button aria-label="dismiss popover" class="popover-1-close" onclick="javascript:closePopover(1);">dismiss</button></p>
+			</div>
 		</div>
 	</body>
 	<footer>
